@@ -11,7 +11,7 @@ export class GalleryServiceService {
 
   getImages(){
     const images = localStorage.getItem(this.key);
-    return images ? images : [];
+    return images ? JSON.parse(images) : [];
   }
 
   saveImages(image_path:any){
