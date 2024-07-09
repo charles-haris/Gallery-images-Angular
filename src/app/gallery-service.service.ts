@@ -17,8 +17,8 @@ export class GalleryServiceService {
   saveImages(image_path:any){
     this.getImages()
     const image_url = URL.createObjectURL(image_path)
-    const image = localStorage.setItem(this.key, JSON.stringify(image_url))
-    this.images.push(image)
+    this.images.push(image_url)
+    const image = localStorage.setItem(this.key, JSON.stringify(this.images))
 
   }
 }

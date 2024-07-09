@@ -28,5 +28,7 @@ export class AppComponent implements OnInit{
 
   upload(){
     this.image_service.saveImages(this.image_path)
+    this.displayImage()
+
   }
 }
