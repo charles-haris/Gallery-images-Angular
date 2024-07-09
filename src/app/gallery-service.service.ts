@@ -6,5 +6,19 @@ import { Injectable } from '@angular/core';
 export class GalleryServiceService {
 
   constructor() { }
+  key : string = "images"
+  images : any [] = []
 
+  getImages(){
+    const images = localStorage.getItem(this.key);
+    return images ? images : [];
+  }
+
+  saveImages(image_path:any){
+    this.getImages()
+    const image_url = URL.createObjectURL(image_path)
+    const image = localStorage.setItem(this.key, JSON.stringify(image_url))
+    this.images.push(image)
+
+  }
 }
